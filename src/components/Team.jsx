@@ -29,7 +29,7 @@ export default function Team() {
 
             <div className="team-card">
               <div className="team-photo">
-                <img src="images/member-ahmed.jpg" alt="Ahmed M A A" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
+                <img src="images/member-ahamed MAA.jpeg" alt="Ahmed M A A" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
                 <div className="team-photo-fallback" style={{background: 'linear-gradient(135deg,#a855f7,#ec4899)'}}>AM</div>
               </div>
               <div className="team-info">
@@ -55,7 +55,7 @@ export default function Team() {
 
             <div className="team-card">
               <div className="team-photo">
-                <img src="images/member-areeb.jpg" alt="Areeb Aflah N" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
+                <img src="images/member-areeb.jpeg" alt="Areeb Aflah N" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
                 <div className="team-photo-fallback" style={{background: 'linear-gradient(135deg,#f59e0b,#ef4444)'}}>NA</div>
               </div>
               <div className="team-info">
@@ -96,11 +96,7 @@ export default function Team() {
             </div>
           </div>
 
-          <div className="photo-hint">
-            <strong>📸 Add your photos:</strong> Create an <code>public/images/</code> folder and add:
-            <code>member-ahamed.jpg</code> <code>member-ahmed.jpg</code> <code>member-bandara.jpg</code>
-            <code>member-areeb.jpg</code> <code>supervisor-jenny.jpg</code> <code>supervisor-poorna.jpg</code>
-          </div>
+
         </div>
       </section>
     </>
