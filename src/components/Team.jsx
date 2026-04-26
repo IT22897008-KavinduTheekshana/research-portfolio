@@ -72,7 +72,7 @@ export default function Team() {
           <div className="sup-grid">
             <div className="team-card">
               <div className="team-photo">
-                <img src="images/supervisor-jenny.jpg" alt="Jenny Krishara" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
+                <img src="images/supervisor-jenny.jpeg" alt="Jenny Krishara" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
                 <div className="team-photo-fallback" style={{background: 'linear-gradient(135deg,#f43f5e,#be185d)'}}>JK</div>
               </div>
               <div className="team-info">
@@ -84,7 +84,7 @@ export default function Team() {
             </div>
             <div className="team-card">
               <div className="team-photo">
-                <img src="images/supervisor-poorna.jpg" alt="Poorna Panduwawala" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
+                <img src="images/supervisor-poorna.jpeg" alt="Poorna Panduwawala" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
                 <div className="team-photo-fallback" style={{background: 'linear-gradient(135deg,#0ea5e9,#0369a1)'}}>PP</div>
               </div>
               <div className="team-info">
