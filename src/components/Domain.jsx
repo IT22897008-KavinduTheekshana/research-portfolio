@@ -1,11 +1,19 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-const datacollectImages = [
-  { src: "images/datacollect/image1.jpeg", alt: "External Supervisor Visit", caption: "External Supervisor Visit – School Data Collection" },
-  { src: "images/datacollect/image2.jpeg", alt: "Data Collection Session", caption: "Data Collection Session – Student Interviews" },
-  { src: "images/datacollect/image3.jpeg", alt: "School Visit", caption: "School Visit – Questionnaire Distribution" },
-  { src: "images/datacollect/image4.jpeg", alt: "Field Research", caption: "Field Research – Rural School Engagement" },
+const allDatacollectImages = [
+  { src: "images/datacollect/image1.jpeg", alt: "School Data Collection", caption: "External Supervisor Visit – School Data Collection" },
+  { src: "images/datacollect/image2.jpeg", alt: "Student Interviews", caption: "Data Collection Session – Student Interviews" },
+  { src: "images/datacollect/image3.jpeg", alt: "Questionnaire Distribution", caption: "School Visit – Questionnaire Distribution" },
+  { src: "images/datacollect/image4.jpeg", alt: "Rural School Engagement", caption: "Field Research – Rural School Engagement" },
+  { src: "images/datacollect/image5.jpeg", alt: "Data Collection 5", caption: "Student Data Collection – Group Session" },
+  { src: "images/datacollect/image6.jpeg", alt: "Data Collection 6", caption: "Teacher Interactions – School Visit" },
+  { src: "images/datacollect/image7.jpeg", alt: "Data Collection 7", caption: "System Testing – Student Trials" },
+  { src: "images/datacollect/image8.jpeg", alt: "Data Collection 8", caption: "Data Gathering – Survey Forms" },
+  { src: "images/datacollect/image9.jpeg", alt: "Data Collection 9", caption: "Field Interviews – Student Feedback" },
+  { src: "images/datacollect/image10.jpeg", alt: "Data Collection 10", caption: "System Evaluation – Focus Group" },
+  { src: "images/datacollect/image11.jpeg", alt: "Data Collection 11", caption: "Data Verification – School Records" },
+  { src: "images/datacollect/image12.jpeg", alt: "Data Collection 12", caption: "Project Implementation – Field Deployment" }
 ];
 
 export default function Domain() {
@@ -14,28 +22,18 @@ export default function Domain() {
   const [fadeIn, setFadeIn] = useState(true);
   const timerRef = useRef(null);
 
-  const goToSlide = (index) => {
-    setFadeIn(false);
-    setTimeout(() => {
-      setSlideIndex(index);
-      setFadeIn(true);
-    }, 300);
-  };
-
-  const nextSlide = () => goToSlide((slideIndex + 1) % datacollectImages.length);
-  const prevSlide = () => goToSlide((slideIndex - 1 + datacollectImages.length) % datacollectImages.length);
+  const totalSets = Math.ceil(allDatacollectImages.length / 2);
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
-      setSlideIndex(prev => {
-        const next = (prev + 1) % datacollectImages.length;
-        return next;
-      });
       setFadeIn(false);
-      setTimeout(() => setFadeIn(true), 300);
-    }, 3000);
+      setTimeout(() => {
+        setSlideIndex(prev => (prev + 1) % totalSets);
+        setFadeIn(true);
+      }, 300);
+    }, 10000);
     return () => clearInterval(timerRef.current);
-  }, []);
+  }, [totalSets]);
 
   return (
     <>
@@ -66,12 +64,15 @@ export default function Domain() {
             {/* 2x2 Image Grid */}
             <div style={{
               display:'grid',
-              gridTemplateColumns:'1fr 1fr 1fr 1fr',
-              gap:'10px',
+              gridTemplateColumns:'1fr 1fr',
+              gap:'20px',
               marginTop:'16px'
             }}>
-              {datacollectImages.map((img, i) => (
-                <div key={i} style={{position:'relative', borderRadius:'10px', overflow:'hidden', background:'#0a0a0a', aspectRatio:'4/3'}}>
+              {allDatacollectImages.slice(slideIndex * 2, slideIndex * 2 + 2).map((img, i) => (
+                <div key={img.src} style={{
+                  position:'relative', borderRadius:'10px', overflow:'hidden', background:'#0a0a0a', aspectRatio:'4/3',
+                  opacity: fadeIn ? 1 : 0, transition: 'opacity 0.3s ease'
+                }}>
                   <img
                     src={img.src}
                     alt={img.alt}
