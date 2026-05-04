@@ -5,20 +5,50 @@ export default function Contact() {
   const [btnText, setBtnText] = useState("Send Message");
   const [btnDisabled, setBtnDisabled] = useState(false);
   const [showMsg, setShowMsg] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setBtnText("Sending…");
     setBtnDisabled(true);
+    setIsError(false);
+    setShowMsg(false);
 
-    setTimeout(() => {
-      setShowMsg(true);
+    const formData = new FormData(e.target);
+    // Use the Web3Forms access key from the environment variables
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setShowMsg(true);
+        setBtnText("Send Message");
+        setBtnDisabled(false);
+        e.target.reset();
+
+        setTimeout(() => setShowMsg(false), 5000);
+      } else {
+        console.error("Web3Forms Error:", data);
+        setIsError(true);
+        setBtnText("Send Message");
+        setBtnDisabled(false);
+        setShowMsg(true);
+        setTimeout(() => setShowMsg(false), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setIsError(true);
       setBtnText("Send Message");
       setBtnDisabled(false);
-      e.target.reset();
-
+      setShowMsg(true);
       setTimeout(() => setShowMsg(false), 5000);
-    }, 900);
+    }
   };
 
   return (
@@ -44,14 +74,14 @@ export default function Contact() {
             </div>
 
             <form className="contact-form-wrap" id="contactForm" onSubmit={handleSubmit} noValidate>
-              <div className="form-group"><label className="form-label" htmlFor="cemail">Your email</label><input id="cemail" type="email" placeholder="name@gmail.com" required/></div>
+              <div className="form-group"><label className="form-label" htmlFor="cemail">Your email</label><input id="cemail" name="email" type="email" placeholder="name@gmail.com" required/></div>
               <div className="form-row">
-                <div className="form-group"><label className="form-label" htmlFor="cfname">First Name</label><input id="cfname" type="text" placeholder="John" required/></div>
-                <div className="form-group"><label className="form-label" htmlFor="clname">Last Name</label><input id="clname" type="text" placeholder="Doe" required/></div>
+                <div className="form-group"><label className="form-label" htmlFor="cfname">First Name</label><input id="cfname" name="first_name" type="text" placeholder="John" required/></div>
+                <div className="form-group"><label className="form-label" htmlFor="clname">Last Name</label><input id="clname" name="last_name" type="text" placeholder="Doe" required/></div>
               </div>
-              <div className="form-group"><label className="form-label" htmlFor="cphone">Phone (Optional)</label><input id="cphone" type="tel" placeholder="+94 XX XXX XXXX"/></div>
+              <div className="form-group"><label className="form-label" htmlFor="cphone">Phone (Optional)</label><input id="cphone" name="phone" type="tel" placeholder="+94 XX XXX XXXX"/></div>
               <div className="form-group"><label className="form-label" htmlFor="csubject">Subject</label>
-                <select id="csubject">
+                <select id="csubject" name="subject">
                   <option>Research Collaboration</option>
                   <option>General Inquiry</option>
                   <option>Media / Press</option>
@@ -59,9 +89,15 @@ export default function Contact() {
                   <option>Other</option>
                 </select>
               </div>
-              <div className="form-group"><label className="form-label" htmlFor="cmsg">Your message</label><textarea id="cmsg" rows="5" placeholder="Leave a comment..." required></textarea></div>
+              <div className="form-group"><label className="form-label" htmlFor="cmsg">Your message</label><textarea id="cmsg" name="message" rows="5" placeholder="Leave a comment..." required></textarea></div>
+              
+              {/* Spam Protection for Web3Forms */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
               <button type="submit" className="btn-submit" disabled={btnDisabled}>{btnText}</button>
-              <div className="form-success" style={{display: showMsg ? 'block' : 'none'}}>✓ Message sent! We&apos;ll get back to you soon.</div>
+              <div className="form-success" style={{display: showMsg ? 'block' : 'none', color: isError ? 'var(--red, #ff4c4c)' : 'var(--cyan)'}}>
+                {isError ? "✖ Failed to send message. Please try again." : "✓ Message sent! We'll get back to you soon."}
+              </div>
             </form>
           </div>
         </div>
