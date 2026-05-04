@@ -143,12 +143,12 @@ export default function Domain() {
           <div className={`tab-panel ${activeTab === 'meth' ? 'active' : ''}`} id="tab-meth">
             <div className="domain-card">
               <h3>System Methodology</h3>
-              <p>AspireAI is built as a four-module integrated platform using microservices architecture deployed on AWS EC2 with FastAPI backends and a React + Material-UI frontend.</p>
+              <p>AspireAI is built as a four-module integrated platform using microservices architecture with FastAPI backends and a React + Material-UI frontend.</p>
             </div>
             <div className="method-grid">
               <div className="method-item"><h4>Module 1 · Stream Recommendation</h4><p>XGBoost multi-class classifier (η=0.05, depth=6, n=200) with RAG pipeline (FAISS + all-MiniLM-L6-v2). Trained on 7,094 records from 15 schools across 3 provinces. Oversampled with SMOTE.</p></div>
               <div className="method-item"><h4>Module 2 · Z-Score Forecasting</h4><p>ARIMA–Prophet weighted ensemble (w=0.6/0.4) on 3,847 course-district-year UGC records. Weighted scoring: Z-score compatibility (50%), subject alignment (30%), interest match (20%).</p></div>
-              <div className="method-item"><h4>Module 3 · Career Pathway Generator</h4><p>Hybrid SVD collaborative filtering + cosine-similarity content filtering (Score = 0.6·CF + 0.4·CB). LightGBM ranking with GPT-4 narrative generation grounded in local labour market data.</p></div>
+              <div className="method-item"><h4>Module 3 · Career Pathway Generator</h4><p>Hybrid SVD collaborative filtering + cosine-similarity content filtering (Score = 0.6·CF + 0.4·CB). LightGBM ranking with Gemini narrative generation grounded in local labour market data.</p></div>
               <div className="method-item"><h4>Module 4 · Soft Skill Assessment</h4><p>ASR transcription (13.2% WER) with NLP feature extraction: fluency, lexical richness, coherence, sentiment. 2-layer neural classifier (ReLU, dropout=0.3) maps to 3 proficiency levels.</p></div>
             </div>
           </div>
@@ -168,22 +168,21 @@ export default function Domain() {
               <div className="tech-icon-item"><div className="ti-icon">🔶</div><span>XGBoost</span></div>
               <div className="tech-icon-item"><div className="ti-icon">🐍</div><span>Python</span></div>
               <div className="tech-icon-item"><div className="ti-icon">🌊</div><span>FastAPI</span></div>
-              <div className="tech-icon-item"><div className="ti-icon">🤖</div><span>GPT-4</span></div>
+              <div className="tech-icon-item"><div className="ti-icon">✨</div><span>Gemini</span></div>
               <div className="tech-icon-item"><div className="ti-icon">🔍</div><span>FAISS</span></div>
               <div className="tech-icon-item"><div className="ti-icon">🔥</div><span>LightGBM</span></div>
-              <div className="tech-icon-item"><div className="ti-icon">🐘</div><span>PostgreSQL</span></div>
+              <div className="tech-icon-item"><div className="ti-icon">🍃</div><span>MongoDB</span></div>
               <div className="tech-icon-item"><div className="ti-icon">⚡</div><span>Redis</span></div>
               <div className="tech-icon-item"><div className="ti-icon">🐳</div><span>Docker</span></div>
-              <div className="tech-icon-item"><div className="ti-icon">☁️</div><span>AWS EC2</span></div>
               <div className="tech-icon-item"><div className="ti-icon">📊</div><span>D3.js</span></div>
             </div>
             <div className="tech-tags">
               <span className="tech-tag">XGBoost</span><span className="tech-tag">ARIMA–Prophet</span>
-              <span className="tech-tag">LightGBM</span><span className="tech-tag">GPT-4</span>
+              <span className="tech-tag">LightGBM</span><span className="tech-tag">Gemini</span>
               <span className="tech-tag">RAG / FAISS</span><span className="tech-tag">FastAPI</span>
-              <span className="tech-tag">React + MUI</span><span className="tech-tag">PostgreSQL</span>
+              <span className="tech-tag">React + MUI</span><span className="tech-tag">MongoDB</span>
               <span className="tech-tag">Redis</span><span className="tech-tag">Docker / K8s</span>
-              <span className="tech-tag">AWS EC2</span><span className="tech-tag">Transformers</span>
+              <span className="tech-tag">Transformers</span>
               <span className="tech-tag">scikit-learn</span><span className="tech-tag">SMOTE</span>
               <span className="tech-tag">D3.js</span><span className="tech-tag">NVIDIA V100</span>
             </div>
