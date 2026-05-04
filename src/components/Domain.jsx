@@ -1,8 +1,41 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const datacollectImages = [
+  { src: "images/datacollect/image1.jpeg", alt: "External Supervisor Visit", caption: "External Supervisor Visit – School Data Collection" },
+  { src: "images/datacollect/image2.jpeg", alt: "Data Collection Session", caption: "Data Collection Session – Student Interviews" },
+  { src: "images/datacollect/image3.jpeg", alt: "School Visit", caption: "School Visit – Questionnaire Distribution" },
+  { src: "images/datacollect/image4.jpeg", alt: "Field Research", caption: "Field Research – Rural School Engagement" },
+];
 
 export default function Domain() {
   const [activeTab, setActiveTab] = useState("lit");
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [fadeIn, setFadeIn] = useState(true);
+  const timerRef = useRef(null);
+
+  const goToSlide = (index) => {
+    setFadeIn(false);
+    setTimeout(() => {
+      setSlideIndex(index);
+      setFadeIn(true);
+    }, 300);
+  };
+
+  const nextSlide = () => goToSlide((slideIndex + 1) % datacollectImages.length);
+  const prevSlide = () => goToSlide((slideIndex - 1 + datacollectImages.length) % datacollectImages.length);
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setSlideIndex(prev => {
+        const next = (prev + 1) % datacollectImages.length;
+        return next;
+      });
+      setFadeIn(false);
+      setTimeout(() => setFadeIn(true), 300);
+    }, 3000);
+    return () => clearInterval(timerRef.current);
+  }, []);
 
   return (
     <>
@@ -30,11 +63,37 @@ export default function Domain() {
               <h3>Literature Survey</h3>
               <p>Several AI tools have been developed to assist with educational recommendations. Existing systems using Random Forest achieved 89.5% accuracy while XGBoost ensemble approaches reached 91.3%, but lacked interactive curriculum validation. Z-score forecasting for university admission was largely unexplored in developing-country contexts. Studies on RAG-based LLM grounding show it minimises hallucination in educational settings, making it ideal for quiz generation and course advising. Collaborative filtering methods have been applied in e-commerce recommendation but rarely in structured career pathway contexts for students with non-traditional qualifications.</p>
             </div>
-            <div className="domain-photo">
-              <img src="images/supervisor-visit.jpg" alt="External Supervisor Visit"
-                   onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
-              <div className="domain-photo-placeholder" style={{display:'none'}}><span>🏫</span><p>Add photo at: images/supervisor-visit.jpg</p></div>
-              <div className="domain-photo-caption">External Supervisor Visit – School Data Collection</div>
+            {/* 2x2 Image Grid */}
+            <div style={{
+              display:'grid',
+              gridTemplateColumns:'1fr 1fr 1fr 1fr',
+              gap:'10px',
+              marginTop:'16px'
+            }}>
+              {datacollectImages.map((img, i) => (
+                <div key={i} style={{position:'relative', borderRadius:'10px', overflow:'hidden', background:'#0a0a0a', aspectRatio:'4/3'}}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    style={{
+                      width:'100%',
+                      height:'100%',
+                      objectFit:'contain',
+                      display:'block',
+                      transition:'transform 0.3s ease'
+                    }}
+                    onError={(e) => { e.target.style.display='none'; }}
+                    onMouseEnter={e => e.currentTarget.style.transform='scale(1.04)'}
+                    onMouseLeave={e => e.currentTarget.style.transform='scale(1)'}
+                  />
+                  <div style={{
+                    position:'absolute', bottom:0, left:0, right:0,
+                    background:'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                    color:'#fff', fontSize:'0.72rem', padding:'18px 10px 8px',
+                    textAlign:'center', letterSpacing:'.02em'
+                  }}>{img.caption}</div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -45,8 +104,8 @@ export default function Domain() {
               <p>Sri Lankan students face critical educational transitions without integrated, data-driven guidance. Only 15–20% of approximately 300,000 annual Advanced Level candidates secure state university admission. The remaining majority must navigate fragmented, poorly documented alternatives — private universities, vocational courses, and overseas options — without systematic support. The lack of a holistic platform connecting O/L stream selection → A/L performance → Z-score forecasting → employment readiness creates a significant equity gap across income groups, geographic regions, and school quality tiers.</p>
             </div>
             <div className="domain-photo">
-              <img src="images/research-problem.jpg" alt="Research" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
-              <div className="domain-photo-placeholder" style={{display:'none'}}><span>📊</span><p>Add photo at: images/research-problem.jpg</p></div>
+              <img src="images/datacollect/image2.jpeg" alt="Research" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
+              <div className="domain-photo-placeholder" style={{display:'none'}}><span>📊</span><p>Add photo at: images/datacollect/image2.jpeg</p></div>
               <div className="domain-photo-caption">Sri Lanka University Admission Statistics</div>
             </div>
           </div>

@@ -102,7 +102,7 @@ export default function Milestones() {
                 <div className="tl-date">📅 April 2026</div>
                 <div className="tl-marks">Mark Allocation: <strong>10%</strong></div>
                 <div className="tl-tags"><span className="tl-tag">Group</span><span className="tl-tag">Individual</span><span className="tl-tag done">✓ Completed</span></div>
-                <p className="tl-desc">Longitudinal study with 450 learners over 6 months. Final: 94.2% accuracy, 82.4 SUS score, 23% increase in informed enrollment decisions.</p>
+                <p className="tl-desc">Longitudinal study with 450 learners over 6 months. Final: 86.89% accuracy, 82.4 SUS score, 23% increase in informed enrollment decisions.</p>
               </div>
               <div className="tl-dot"><div className="tl-dot-inner"></div></div>
               <div className="tl-empty"></div>

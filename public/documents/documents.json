@@ -1,0 +1,58 @@
+[
+  {
+    "id": "project-charter",
+    "title": "Project Charter",
+    "icon": "📊",
+    "color": "doc-c-pink",
+    "description": "The document gives information regarding the statement of scope, objectives overview, an outline of scope, approximate schedule and people participating in the project.",
+    "file": "documents/Project_Charter.pdf"
+  },
+  {
+    "id": "project-proposal",
+    "title": "Project Proposal",
+    "icon": "📄",
+    "color": "doc-c-blue",
+    "description": "The document contains details like goals, objectives, important dates, milestones and requirements needed to start and complete the research project.",
+    "file": "documents/Project_Proposal.pdf"
+  },
+  {
+    "id": "research-paper",
+    "title": "Research Paper",
+    "icon": "📝",
+    "color": "doc-c-purple",
+    "description": "A research paper containing literature review, methodology, analysis, interpretation, and argument based on in-depth independent research. Published in IEEE.",
+    "file": "documents/Research_Paper.pdf"
+  },
+  {
+    "id": "final-thesis",
+    "title": "Final Thesis (Main)",
+    "icon": "📚",
+    "color": "doc-c-green",
+    "description": "The document contains the proposed solution to the research question, finalised after six months of longitudinal evaluation with 450 learners across Sri Lanka.",
+    "file": "documents/Final_Thesis_Main.pdf"
+  },
+  {
+    "id": "individual-documents",
+    "title": "Individual Documents (×4)",
+    "icon": "🎓",
+    "color": "doc-c-yellow",
+    "description": "Contains individual per-member component thesis documents — one for each of the four research modules developed by the AspireAI team.",
+    "file": "documents/Individual_Documents.pdf"
+  },
+  {
+    "id": "checklist-documents",
+    "title": "Check List Documents",
+    "icon": "🗂️",
+    "color": "doc-c-orange",
+    "description": "The document describes the progress of the project within specific time periods and compares it against the project plan milestone completion checklist.",
+    "file": "documents/CheckList_Documents.pdf"
+  },
+  {
+    "id": "business-plan",
+    "title": "Business Plan",
+    "icon": "💼",
+    "color": "doc-c-teal",
+    "description": "The document outlines the commercialisation roadmap, revenue model, and go-to-market strategy for AspireAI as a scalable EdTech platform in Sri Lanka.",
+    "file": "documents/Business_Plan.pdf"
+  }
+]

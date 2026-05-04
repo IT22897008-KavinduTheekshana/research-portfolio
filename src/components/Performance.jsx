@@ -41,7 +41,7 @@ export default function Performance() {
             <p>Validated on 450 learners over 6 months across four AI modules.</p>
           </div>
           <div className="perf-grid">
-            <div className="perf-card shimmer-wrap"><div className="perf-metric">Stream Recommendation</div><div className="perf-val">94.2%</div><div className="perf-comp">↑ from baseline 89.5%</div><div className="bar-wrap"><div className="bar-fill" data-width="94.2" ref={addToRefs}></div></div></div>
+            <div className="perf-card shimmer-wrap"><div className="perf-metric">Stream Recommendation</div><div className="perf-val">86.89%</div><div className="perf-comp">↑ from baseline 89.5%</div><div className="bar-wrap"><div className="bar-fill" data-width="86.89" ref={addToRefs}></div></div></div>
             <div className="perf-card shimmer-wrap"><div className="perf-metric">Z-Score MAPE Error</div><div className="perf-val">3.2%</div><div className="perf-comp">↓ from baseline 8.1%</div><div className="bar-wrap"><div className="bar-fill" data-width="60" ref={addToRefs}></div></div></div>
             <div className="perf-card shimmer-wrap"><div className="perf-metric">Course Recommendation</div><div className="perf-val">89.4%</div><div className="perf-comp">↑ from baseline 68.4%</div><div className="bar-wrap"><div className="bar-fill" data-width="89.4" ref={addToRefs}></div></div></div>
             <div className="perf-card shimmer-wrap"><div className="perf-metric">Career Pathways (P@10)</div><div className="perf-val">89.1%</div><div className="perf-comp">↑ from baseline 82.4%</div><div className="bar-wrap"><div className="bar-fill" data-width="89.1" ref={addToRefs}></div></div></div>
