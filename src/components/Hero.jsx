@@ -23,7 +23,7 @@ export default function Hero() {
         <h1>AspireAI<br /><span className="grad-text">Smart Career Guidance</span></h1>
         <p className="hero-sub">AI-Powered Career Guidance System for Sri Lanka</p>
         <div className="hero-metrics">
-          <div className="metric"><div className="metric-val">94<span>%</span></div><div className="metric-label">Stream Accuracy</div></div>
+          <div className="metric"><div className="metric-val">86.8<span>%</span></div><div className="metric-label">Stream Accuracy</div></div>
           <div className="metric-divider"></div>
           <div className="metric"><div className="metric-val">3.2<span>%</span></div><div className="metric-label">Z-Score MAPE</div></div>
           <div className="metric-divider"></div>
