@@ -12,22 +12,23 @@ export default function Documents() {
             <p>All research documents produced throughout the project lifecycle. Click to download.</p>
           </div>
           <div className="doc-grid">
-            {docs.map((doc) => (
-              <div key={doc.id} className={`doc-card ${doc.color}`}>
-                <div className="doc-icon-wrap">{doc.icon}</div>
-                <h4>{doc.title}</h4>
-                <p>{doc.description}</p>
-                <a
-                  className="btn-doc"
-                  href={`/${doc.file}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  Download PDF
-                </a>
-              </div>
-            ))}
+            {docs.map((doc) => {
+              // Extract just the filename from the path e.g. "documents/Research_Paper.pdf" → "Research_Paper.pdf"
+              const filename = doc.file.split("/").pop();
+              return (
+                <div key={doc.id} className={`doc-card ${doc.color}`}>
+                  <div className="doc-icon-wrap">{doc.icon}</div>
+                  <h4>{doc.title}</h4>
+                  <p>{doc.description}</p>
+                  <a
+                    className="btn-doc"
+                    href={`/api/download/${encodeURIComponent(filename)}`}
+                  >
+                    Download PDF
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

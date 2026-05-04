@@ -1,0 +1,52 @@
+[
+  {
+    "id": "proposal-presentation",
+    "title": "Proposal Presentation",
+    "sub": "Initial Presentation with Overview of Research Problem",
+    "date": "December 2025",
+    "icon": "📊",
+    "gradient": "linear-gradient(135deg,#e8f0fe,#c6d8fe)",
+    "file": "documents/Proposal Presentation.pptx",
+    "available": true
+  },
+  {
+    "id": "progress-presentation-1",
+    "title": "Progress Presentation-1",
+    "sub": "50% Project Completion",
+    "date": "January 2026",
+    "icon": "🔬",
+    "gradient": "linear-gradient(135deg,#ecfce4,#c9f9e4)",
+    "file": "documents/Progress Presentation-1.pptx",
+    "available": true
+  },
+  {
+    "id": "progress-presentation-2",
+    "title": "Progress Presentation-2",
+    "sub": "80% Project Completion",
+    "date": "April 2026",
+    "icon": "🤖",
+    "gradient": "linear-gradient(135deg,#fff8e8,#fde8b0)",
+    "file": "documents/Progress Presentation-2.odp",
+    "available": true
+  },
+  {
+    "id": "final-presentation",
+    "title": "Final Presentation",
+    "sub": "100% Completion with deployed Solution",
+    "date": "April 2026",
+    "icon": "🏆",
+    "gradient": "linear-gradient(135deg,#f0f8e8,#c8f0b0)",
+    "file": "documents/Final_Presentation.pptx",
+    "available": false
+  },
+  {
+    "id": "viva-defence",
+    "title": "Viva / Defence",
+    "sub": "Final Oral Examination",
+    "date": "May 2026 · TBD",
+    "icon": "🎤",
+    "gradient": "linear-gradient(135deg,#f5f5ff,#e0e0f8)",
+    "file": "",
+    "available": false
+  }
+]
