@@ -105,7 +105,7 @@ export default function Domain() {
               <p>Sri Lankan students face critical educational transitions without integrated, data-driven guidance. Only 15–20% of approximately 300,000 annual Advanced Level candidates secure state university admission. The remaining majority must navigate fragmented, poorly documented alternatives — private universities, vocational courses, and overseas options — without systematic support. The lack of a holistic platform connecting O/L stream selection → A/L performance → Z-score forecasting → employment readiness creates a significant equity gap across income groups, geographic regions, and school quality tiers.</p>
             </div>
             <div className="domain-photo">
-              <img src="images/datacollect/image2.jpeg" alt="Research" onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex'; }} />
+              <img src="images/datacollect/image13.png" alt="Research" style={{ height: 'auto', objectFit: 'contain', maxHeight: '500px' }} onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex'; }} />
               <div className="domain-photo-placeholder" style={{ display: 'none' }}><span>📊</span><p>Add photo at: images/datacollect/image2.jpeg</p></div>
               <div className="domain-photo-caption">Sri Lanka University Admission Statistics</div>
             </div>
@@ -147,7 +147,7 @@ export default function Domain() {
               <p>AspireAI is built as a four-module integrated platform using microservices architecture with FastAPI backends and a React + Material-UI frontend.</p>
             </div>
             <div className="method-grid">
-              <div className="method-item"><h4>Module 1 · Stream Recommendation</h4><p>XGBoost multi-class classifier (η=0.05, depth=6, n=200) with RAG pipeline (FAISS + all-MiniLM-L6-v2). Trained on 7,094 records from 15 schools across 3 provinces. Oversampled with SMOTE.</p></div>
+              <div className="method-item"><h4>Module 1 · Stream Recommendation</h4><p>XGBoost multi-class classifier (η=0.05, depth=6, n=200) with RAG pipeline (FAISS + all-MiniLM-L6-v2). Trained on 7,094 records from 8 schools across 3 provinces. Oversampled with SMOTE.</p></div>
               <div className="method-item"><h4>Module 2 · Z-Score Forecasting</h4><p>ARIMA–Prophet weighted ensemble (w=0.6/0.4) on 3,847 course-district-year UGC records. Weighted scoring: Z-score compatibility (50%), subject alignment (30%), interest match (20%).</p></div>
               <div className="method-item"><h4>Module 3 · Career Pathway Generator</h4><p>Hybrid SVD collaborative filtering + cosine-similarity content filtering (Score = 0.6·CF + 0.4·CB). LightGBM ranking with Gemini narrative generation grounded in local labour market data.</p></div>
               <div className="method-item"><h4>Module 4 · Soft Skill Assessment</h4><p>ASR transcription (13.2% WER) with NLP feature extraction: fluency, lexical richness, coherence, sentiment. 2-layer neural classifier (ReLU, dropout=0.3) maps to 3 proficiency levels.</p></div>
