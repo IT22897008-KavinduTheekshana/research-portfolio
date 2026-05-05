@@ -13,7 +13,12 @@
     "icon": "📄",
     "color": "doc-c-blue",
     "description": "The document contains details like goals, objectives, important dates, milestones and requirements needed to start and complete the research project.",
-    "file": "documents/Project_Proposal.pdf"
+    "files": [
+      "documents/Project Proposal/Proposal1.pdf",
+      "documents/Project Proposal/Proposal2.pdf",
+      "documents/Project Proposal/Proposal3.pdf",
+      "documents/Project Proposal/Proposal4.pdf"
+    ]
   },
   {
     "id": "research-paper",
@@ -29,7 +34,8 @@
     "icon": "📚",
     "color": "doc-c-green",
     "description": "The document contains the proposed solution to the research question, finalised after six months of longitudinal evaluation with 450 learners across Sri Lanka.",
-    "file": "documents/Final_Thesis_Main.pdf"
+    "file": "documents/Final_Thesis_Main.pdf",
+    "available": false
   },
   {
     "id": "individual-documents",
@@ -37,7 +43,8 @@
     "icon": "🎓",
     "color": "doc-c-yellow",
     "description": "Contains individual per-member component thesis documents — one for each of the four research modules developed by the AspireAI team.",
-    "file": "documents/Individual_Documents.pdf"
+    "file": "documents/Individual_Documents.pdf",
+    "available": false
   },
   {
     "id": "checklist-documents",
@@ -45,7 +52,8 @@
     "icon": "🗂️",
     "color": "doc-c-orange",
     "description": "The document describes the progress of the project within specific time periods and compares it against the project plan milestone completion checklist.",
-    "file": "documents/CheckList_Documents.pdf"
+    "file": "documents/CheckList_Documents.pdf",
+    "available": false
   },
   {
     "id": "business-plan",
@@ -53,6 +61,7 @@
     "icon": "💼",
     "color": "doc-c-teal",
     "description": "The document outlines the commercialisation roadmap, revenue model, and go-to-market strategy for AspireAI as a scalable EdTech platform in Sri Lanka.",
-    "file": "documents/Business_Plan.pdf"
+    "file": "documents/Business_Plan.pdf",
+    "available": false
   }
 ]

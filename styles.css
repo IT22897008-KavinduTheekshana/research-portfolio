@@ -685,6 +685,7 @@ h2.section-title .accent{
   position:relative;z-index:1;
 }
 .btn-doc::after{content:'↓';}
+.btn-doc.disabled::after{content:'';}
 .btn-doc:hover{background:linear-gradient(135deg,#1d4ed8,#4338ca);transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,0.4);}
 
 /* ══════════════════════════════════════════════════════
