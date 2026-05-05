@@ -36,8 +36,8 @@
     "date": "April 2026",
     "icon": "🏆",
     "gradient": "linear-gradient(135deg,#f0f8e8,#c8f0b0)",
-    "file": "documents/Final_Presentation.pptx",
-    "available": false
+    "file": "documents/Final_Presentation.pdf",
+    "available": true
   },
   {
     "id": "viva-defence",

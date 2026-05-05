@@ -31,7 +31,7 @@ export default function Domain() {
         setSlideIndex(prev => (prev + 1) % totalSets);
         setFadeIn(true);
       }, 300);
-    }, 10000);
+    }, 8000);
     return () => clearInterval(timerRef.current);
   }, [totalSets]);
 
@@ -63,35 +63,35 @@ export default function Domain() {
             </div>
             {/* 2x2 Image Grid */}
             <div style={{
-              display:'grid',
-              gridTemplateColumns:'1fr 1fr',
-              gap:'20px',
-              marginTop:'16px'
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '20px',
+              marginTop: '16px'
             }}>
               {allDatacollectImages.slice(slideIndex * 2, slideIndex * 2 + 2).map((img, i) => (
                 <div key={img.src} style={{
-                  position:'relative', borderRadius:'10px', overflow:'hidden', background:'#0a0a0a', aspectRatio:'4/3',
+                  position: 'relative', borderRadius: '10px', overflow: 'hidden', background: '#0a0a0a', aspectRatio: '4/3',
                   opacity: fadeIn ? 1 : 0, transition: 'opacity 0.3s ease'
                 }}>
                   <img
                     src={img.src}
                     alt={img.alt}
                     style={{
-                      width:'100%',
-                      height:'100%',
-                      objectFit:'contain',
-                      display:'block',
-                      transition:'transform 0.3s ease'
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain',
+                      display: 'block',
+                      transition: 'transform 0.3s ease'
                     }}
-                    onError={(e) => { e.target.style.display='none'; }}
-                    onMouseEnter={e => e.currentTarget.style.transform='scale(1.04)'}
-                    onMouseLeave={e => e.currentTarget.style.transform='scale(1)'}
+                    onError={(e) => { e.target.style.display = 'none'; }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                   />
                   <div style={{
-                    position:'absolute', bottom:0, left:0, right:0,
-                    background:'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color:'#fff', fontSize:'0.72rem', padding:'18px 10px 8px',
-                    textAlign:'center', letterSpacing:'.02em'
+                    position: 'absolute', bottom: 0, left: 0, right: 0,
+                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                    color: '#fff', fontSize: '0.72rem', padding: '18px 10px 8px',
+                    textAlign: 'center', letterSpacing: '.02em'
                   }}>{img.caption}</div>
                 </div>
               ))}
@@ -105,8 +105,8 @@ export default function Domain() {
               <p>Sri Lankan students face critical educational transitions without integrated, data-driven guidance. Only 15–20% of approximately 300,000 annual Advanced Level candidates secure state university admission. The remaining majority must navigate fragmented, poorly documented alternatives — private universities, vocational courses, and overseas options — without systematic support. The lack of a holistic platform connecting O/L stream selection → A/L performance → Z-score forecasting → employment readiness creates a significant equity gap across income groups, geographic regions, and school quality tiers.</p>
             </div>
             <div className="domain-photo">
-              <img src="images/datacollect/image2.jpeg" alt="Research" onError={(e) => { e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}/>
-              <div className="domain-photo-placeholder" style={{display:'none'}}><span>📊</span><p>Add photo at: images/datacollect/image2.jpeg</p></div>
+              <img src="images/datacollect/image2.jpeg" alt="Research" onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex'; }} />
+              <div className="domain-photo-placeholder" style={{ display: 'none' }}><span>📊</span><p>Add photo at: images/datacollect/image2.jpeg</p></div>
               <div className="domain-photo-caption">Sri Lanka University Admission Statistics</div>
             </div>
           </div>
@@ -116,14 +116,14 @@ export default function Domain() {
             <div className="domain-card">
               <h3>Research Gap</h3>
               <p>A review of 47 peer-reviewed publications revealed no existing platform integrating all of the following:</p>
-              <ul style={{marginTop: '12px'}}>
+              <ul style={{ marginTop: '12px' }}>
                 <li>Predictive stream selection with curriculum-aligned validation quizzes</li>
                 <li>Z-score forecasting with ROI and scholarship estimation</li>
                 <li>Career pathway visualisation for non-traditional (non-university) learners</li>
                 <li>Objective, automated soft-skill assessment using speech analysis</li>
                 <li>All designed specifically for Sri Lanka&apos;s bilingual, multi-stream, UGC-regulated ecosystem</li>
               </ul>
-              <p style={{marginTop: '14px'}}>International platforms (Khan Academy, Naviance) address some of these individually but are not contextualised for Sri Lanka&apos;s unique Z-score system, district-based university allocation, or local labour market conditions.</p>
+              <p style={{ marginTop: '14px' }}>International platforms (Khan Academy, Naviance) address some of these individually but are not contextualised for Sri Lanka&apos;s unique Z-score system, district-based university allocation, or local labour market conditions.</p>
             </div>
           </div>
 
@@ -160,9 +160,9 @@ export default function Domain() {
               <h3>Technologies Used</h3>
               <p>AspireAI integrates state-of-the-art tools across ML, NLP, backend, and frontend domains.</p>
             </div>
-            <div style={{textAlign: 'center', margin: '24px 0 12px'}}>
-              <div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '100px', height: '72px', background: 'var(--glass)', borderRadius: '36px', border: '1px solid var(--border)', fontSize: '2.2rem', animation: 'heroFloat 5s ease-in-out infinite'}}>☁️</div>
-              <p style={{color: 'var(--muted)', fontSize: '.8rem', marginTop: '8px', letterSpacing: '.15em', textTransform: 'uppercase'}}>Technologies</p>
+            <div style={{ textAlign: 'center', margin: '24px 0 12px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '100px', height: '72px', background: 'var(--glass)', borderRadius: '36px', border: '1px solid var(--border)', fontSize: '2.2rem', animation: 'heroFloat 5s ease-in-out infinite' }}>☁️</div>
+              <p style={{ color: 'var(--muted)', fontSize: '.8rem', marginTop: '8px', letterSpacing: '.15em', textTransform: 'uppercase' }}>Technologies</p>
             </div>
             <div className="tech-icons-grid">
               <div className="tech-icon-item"><div className="ti-icon">⚛️</div><span>React.js</span></div>
